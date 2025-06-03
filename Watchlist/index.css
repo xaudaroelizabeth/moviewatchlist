@@ -1,0 +1,392 @@
+/* Define CSS variables for light mode */
+:root {
+  --bg-color: #FFFFFF;
+  --text-color: #000000;
+  --header-bg: #000000; /* fallback if needed */
+  --input-bg: #f0f0f0;
+  --input-text: #363636;
+  --button-bg: #4B4B4B;
+  --button-text: #ffffff;
+  --overlay-color: rgba(0, 0, 0, 0.5);
+  --no-data-color: #DFDDDD;
+  --subtitle-color: #ffffff;
+  --plot-color: #6B7280;
+  --mtitle-color:#ffffff;
+  --title-color:#00000;
+  --watchlist-add-color:#12121;
+  
+ 
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --header-bg: #121212;
+  --input-bg: #2E2E2F;
+  --input-text: #ffffff;
+  --button-bg: #4B4B4B;
+  --button-text: #ffffff;
+  --overlay-color: rgba(0, 0, 0, 0.5);
+  --no-data-color: #DFDDDD;
+  --subtitle-color: #ffffff;
+  --plot-color: #9CA3AF;
+  --title-color: #ffffff;
+  --watchlist-add-color:#ffffff;
+}
+
+/* Reset margin & padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    display:flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh; 
+    max-width: 1200px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Color for key elements */
+body,
+.title,
+.plot,
+.genre,
+.runtime,
+.rating,
+.subtitle {
+  color: var(--text-color);
+}
+
+/* Header styles */
+header {
+    position: relative; /* Needed for positioning pseudo-elements */
+    background-image: url('images/movieHeaderIMG.png');
+    background-size: cover;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    height: 35vh;
+    min-height: 220px;
+    width: 100%;
+    margin: 0;
+    color: var(--title-color); /* Use CSS var */
+    overflow: hidden;
+}
+
+/* Overlay on header */
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    z-index: 0;
+}
+
+/* Header content stays above overlay */
+header * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Container title */
+.container-title {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:550px;
+}
+
+/* Main title */
+#find-your-film {
+    font-weight: 800;
+    font-size: 42px;
+    color: var(--mtitle-color)
+    
+}
+
+/* Link styles */
+a { 
+    text-decoration: none;
+    color: inherit;
+}
+
+#search-link:hover,
+#watchlist-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Subtitle */
+.subtitle { 
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--subtitle-color);
+}
+
+/* Watchlist */
+.watchlist {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#empty-watchlist {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    width: 404px;
+    color: var(--no-data-color);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#add-to-watchlist-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.plus-icon-watchlist-page {
+    padding-right: 5px;
+}
+
+.plus-icon {
+    display: flex;
+    max-width: 100%;
+    width: 18px;
+    height: auto;
+    margin-left: 40px;  
+    border-radius: 50%;
+}
+
+.plus-icon:hover,
+.plus-icon-watchlist-page:hover {
+    transition: transform 0.2s ease;
+    transform: scale(1.2); 
+    cursor: pointer;
+}
+
+#add-movies-text {
+   color: var(--watchlist-add-color);
+   font-size: 14px;
+   font-weight: 700;
+}
+
+/* Search bar container */
+.search-container {
+    position: relative;
+    top: -50px; /* Moves the bar upward, overlapping the header */
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.search-box {
+    position: relative; /* This makes the icon's position relative to the search box */
+    display: flex; /* Make input and button sit side by side */
+    width: 550px;
+    margin: auto;
+}
+
+.search-box input[type="search"] {
+    flex: 1; /* Fills all available space */
+    padding: 12px 12px 12px 40px;
+    font-size: 16px;
+    border: none;
+    /* Box Shadow for raised effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-right: none; /* No double border between input and button */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 40px;
+    border: none;
+    /* Box Shadow for raised effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-left: none; /* Seamless join */
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 16px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.search-box::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('images/searchIcon.png'); /* Adjust path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none; /* Let clicks go through to input */
+    z-index: 2;
+}
+
+#movies-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#no-data-img-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.no-data-text {
+    color: var(--no-data-color);
+    font-size: 18px;
+    font-weight: 700;
+    width: 321px;
+    text-align: center;
+}
+
+#no-data-img {
+   height: 80px;
+   display: flex; 
+   justify-content: center;
+   margin: 100px;
+}
+
+.movies-container {
+    display: flex;
+    border-bottom: 3px solid #E5E7EB;
+    width: 600px;
+    height: 200px;
+    gap: 15px;
+    padding: 20px;
+}
+
+.poster-container {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.minutes-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+
+.watchlist-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.plot-container {
+    display: flex;
+    color: var(--plot-color);
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    padding: 20px;
+}
+
+.poster {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--title-color);
+    line-height: 20px;
+}
+
+.star-icon {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15px;
+    width: 15px;   
+}
+
+.rating {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.runtime {
+   
+}
+
+.genre {
+    padding-left: 20px;
+}
+
+.plot {
+    font-size: 14px;
+    line-height: 20px;
+}

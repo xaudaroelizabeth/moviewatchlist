@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>My Second HTML Page</title>
+</head>
+
+<body>
+    <header class="watchlist">
+      <p class="visually-hidden">
+          Background image includes movie posters from Scarface, The Dark Knight, and The Godfather.
+      </p>
+      <div class="container-title">
+      <h1 id="find-your-film">My Watchlist</h1>
+      <h3 id="search-link"  class="subtitle"><a href="index.html">Search for movies</a></h3>
+      </div>
+    </header>
+    
+    <div id="movies-container" class="movie-container">
+      <div id="empty-watchlist">Your watchlist is looking a little empty...</div>
+      
+      <div id="add-to-watchlist-container">  
+        <div id="plus-icon-container" aria-label="Add movies to watchlist">
+          <a href="index.html" aria-label="Add movies to watchlist">
+            <img class="plus-icon-watchlist-page" src="/images/iconPlusSignLightMode.png" alt="">
+          </a>
+        </div> 
+        <div id="add-movies-text">Let's add some movies!</div>
+      </div> 
+    </div>
+  
+<script src="index.js"></script>
+</body>
+</html>
