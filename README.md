@@ -6,22 +6,22 @@ A movie watchlist application built with JavaScript and Vite that allows users t
 
 ## ✨ Features
 
--Search movies by title
--Filter movies by genre
--Add movies to a personal watchlist
--Remove movies from the watchlist
--Dynamic movie search results
--Clean and intuitive user interface
--Fast and responsive interactions
+- Search movies by title
+- Filter movies by genre
+- Add movies to a personal watchlist
+- Remove movies from the watchlist
+- Dynamic movie search results
+- Clean and intuitive user interface
+- Fast and responsive interactions
 
 ---
 
 ## 🛠️ Built With
 
--HTML
--CSS
--JavaScript
--Vite
+- HTML
+- CSS
+- JavaScript
+- Vite
 
 ---
 
@@ -50,11 +50,11 @@ npm run build
 
 Users can:
 
--Search for movies by name
--Browse movies by genre
--Add movies to a watchlist
--Remove movies from a watchlist
--Keep track of movies they want to watch later
+- Search for movies by name
+- Browse movies by genre
+- Add movies to a watchlist
+- Remove movies from a watchlist
+- Keep track of movies they want to watch later
 
 ---
 
@@ -67,14 +67,14 @@ Users can:
 ---
 
 ## 🔮 Future Improvements
--Add movie ratings and reviews
--Save watchlist data using local storage
--Sort movies by title, rating, or release date
--Add movie detail pages
--Support multiple watchlists
--Integrate with a movie API for larger datasets
--Improve mobile responsiveness
--Add dark mode support
+- Add movie ratings and reviews
+- Save watchlist data using local storage
+- Sort movies by title, rating, or release date
+- Add movie detail pages
+- Support multiple watchlists
+- Integrate with a movie API for larger datasets
+- Improve mobile responsiveness
+- Add dark mode support
 
 ---
 
