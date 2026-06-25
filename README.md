@@ -2,6 +2,8 @@
 
 A movie watchlist application built with JavaScript and Vite that allows users to search for movies by title or genre and manage a personal watchlist. Users can easily discover movies, save them for later, and remove them from their watchlist whenever they choose.
 
+---
+
 ## ✨ Features
 
 -Search movies by title
@@ -12,11 +14,16 @@ A movie watchlist application built with JavaScript and Vite that allows users t
 -Clean and intuitive user interface
 -Fast and responsive interactions
 
+---
+
 ## 🛠️ Built With
+
 -HTML
 -CSS
 -JavaScript
 -Vite
+
+---
 
 ## 🚀 Getting Started
 
